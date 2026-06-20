@@ -6,9 +6,9 @@
 ---
 
 ## 📌 Version Info | Versiyon Bilgisi 
-Current Version: **2.0.0**
+Current Version: **2.1.0**
 
-Geçerli Sürüm: **2.0.0**
+Geçerli Sürüm: **2.1.0**
 
 ---
 
@@ -62,6 +62,7 @@ git clone https://github.com/BurakHINGE/SecondCalculator.git
 
 | Version | Date       | Description |
 |--------:|------------|-------------|
+| v2.1.0  | 2026-06-21 | Negative inputs have been unallowed and exit option has been created |
 | v2.0.0  | 2026-03-14 | Improve performance and add language-specific formatting | 
 | v1.2.0  | 2025-12-08 | Calculating hour has been added to code  |
 | v1.1.0  | 2025-10-20 | English has been added to code  |
