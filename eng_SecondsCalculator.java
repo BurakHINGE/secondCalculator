@@ -4,10 +4,17 @@ public class eng_SecondsCalculator {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        while(true) {
+        int choice = 1;
+
+        while(choice == 1) {
 
             System.out.print("Enter the number of seconds: ");
             int enteredSeconds = input.nextInt();
+
+            while (enteredSeconds < 0) {
+                System.out.print("Enter a number which higher than 0!\n: ");
+                enteredSeconds = input.nextInt();
+            }
         
             int hours = enteredSeconds / 3600;
             int remainingSecondsAfterHours = enteredSeconds % 3600;
@@ -33,6 +40,13 @@ public class eng_SecondsCalculator {
             }
 
             System.out.println();
+            System.out.print("1-Calculate Again\n2-Exit\n: ");
+            enteredSeconds = input.nextInt();
+            
+            if (enteredSeconds == 2) {
+                System.out.println("Program is closing...");
+                System.exit(0);
+            }
         }
     }   
 }
