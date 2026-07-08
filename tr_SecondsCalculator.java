@@ -8,19 +8,27 @@ public class tr_SecondsCalculator {
 
         while (secim == 1) {
 
-            System.out.print("Saniye değeri giriniz: ");
-            int girilenSaniye = input.nextInt();
+            int girilenSaniye = -1;
 
-            while (girilenSaniye < 0) {
-                System.out.print("Lütfen 0'dan büyük bir değer giriniz!\n: ");
-                girilenSaniye = input.nextInt();
+            while (true) {
+                System.out.print("Saniye değeri giriniz: ");
+
+                if (input.hasNextInt()) {
+                    girilenSaniye = input.nextInt();
+
+                    if (girilenSaniye >= 0) {
+                        break;
+                    }
+                    else {
+                        System.out.println("Lütfen 0'dan büyük bir değer giriniz!: ");
+                        girilenSaniye = input.nextInt();
+                    }
+                }
+                else {
+                    System.out.println("Lütfen sadece tam sayı değeri giriniz:");
+                    input.next();
+                }  
             }
-        
-            int saat = girilenSaniye / 3600;
-            int saattenKalanSaniye = girilenSaniye % 3600;
-            int dakika = saattenKalanSaniye / 60;
-            int dakikadanKalanSaniye = saattenKalanSaniye % 60;
-            int kalanSaniye = dakikadanKalanSaniye;
 
             System.out.print(girilenSaniye + " saniye: ");
 
@@ -28,6 +36,13 @@ public class tr_SecondsCalculator {
                 System.out.print("0 saniye ediyor.");
                 System.out.println();
             }
+
+            int saat = girilenSaniye / 3600;
+            int saattenKalanSaniye = girilenSaniye % 3600;
+            int dakika = saattenKalanSaniye / 60;
+            int dakikadanKalanSaniye = saattenKalanSaniye % 60;
+            int kalanSaniye = dakikadanKalanSaniye;
+
             if (saat > 0) {
                 System.out.print(saat + " saat ");
             }
@@ -40,9 +55,23 @@ public class tr_SecondsCalculator {
 
             System.out.print("ediyor.");
             System.out.println();
-            System.out.print("1-Tekrar Hesapla\n2-Çıkış\n: ");
-            secim = input.nextInt();
             
+            while (true) {
+                System.out.print("1-Tekrar Hesapla\n2-Çıkış\nSeçiminiz: ");
+                
+                if (input.hasNextInt()) {
+                    secim = input.nextInt();
+                    
+                    if (secim == 1 || secim == 2) {
+                        break;
+                    } else {
+                        System.out.println("Hata: Lütfen sadece 1 veya 2 seçeneklerinden birini giriniz!\n");
+                    }
+                } else {
+                    System.out.println("Hata: Lütfen sadece sayısal bir değer giriniz!\n");
+                    input.next();
+                }
+            }
             if (secim == 2) {
                 System.out.println("Sistemden çıkış yapılıyor...");
                 System.exit(0);
