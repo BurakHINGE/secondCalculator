@@ -27,7 +27,6 @@ public class tr_SecondsCalculator {
             if (girilenSaniye == 0) {
                 System.out.print("0 saniye ediyor.");
                 System.out.println();
-                continue;
             }
             if (saat > 0) {
                 System.out.print(saat + " saat ");
